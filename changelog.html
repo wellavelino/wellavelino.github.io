@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wellington Avelino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+    body { margin: 0; background: #FBFBF8; color: #16181D; font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #0B5FFF; text-decoration: none; border-bottom: 1px solid #B8CCFF; }
+    a:hover { border-bottom-color: #0B5FFF; }
+    .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 48px; box-sizing: border-box; }
+    .muted { color: #6B7280; }
+    .ph { font-family: 'IBM Plex Mono', monospace; font-size: .85em; color: #8A4B00; background: #FFF1DC; border: 1px dashed #D9A35B; border-radius: 3px; padding: 1px 6px; }
+
+    .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 22px 0; border-bottom: 1px solid #E4E4DE; font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
+    .crumbs b { font-weight: 600; }
+    .hero { padding: 72px 0 48px; }
+    .hero h1 { font-size: 76px; line-height: .95; letter-spacing: -0.035em; font-weight: 700; margin: 0 0 18px; }
+    .hero h1 .hash { color: #C9CBC2; font-weight: 500; }
+    .hero p { font-size: 20px; line-height: 1.55; max-width: 720px; margin: 0 0 14px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    .badge { font-family: 'IBM Plex Mono', monospace; font-size: 12px; display: inline-flex; border-radius: 4px; overflow: hidden; border: 1px solid #16181D; }
+    .badge span { padding: 3px 8px; }
+    .badge span:first-child { background: #16181D; color: #fff; }
+
+    .release { display: grid; grid-template-columns: 200px 1fr; gap: 0 48px; padding: 44px 0; border-top: 1px solid #E4E4DE; }
+    .tagcol { position: relative; }
+    .tag { font-family: 'IBM Plex Mono', monospace; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+    .date { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6B7280; margin-top: 4px; }
+    .latest { display: inline-block; margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; background: #19C37D; color: #05331E; padding: 3px 8px; border-radius: 99px; font-weight: 600; }
+    .major { display: inline-block; margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; background: #FFE58A; color: #4A3A00; padding: 3px 8px; border-radius: 99px; font-weight: 600; }
+    .release h2 { font-size: 30px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 6px; font-weight: 600; }
+    .release .where { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6B7280; margin-bottom: 18px; }
+    .kind { font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; margin: 20px 0 8px; }
+    .kind.add { color: #0E8A55; } .kind.chg { color: #0B5FFF; } .kind.fix { color: #B4421B; } .kind.rm { color: #8B5CF6; }
+    .release ul { margin: 0; padding-left: 20px; font-size: 16.5px; line-height: 1.65; }
+    .release li { margin: 2px 0; }
+    .release li::marker { color: #A3A69C; }
+    code { font-family: 'IBM Plex Mono', monospace; font-size: .88em; background: #EFEFE8; padding: 1px 5px; border-radius: 3px; }
+
+    .sec { padding: 80px 0 24px; border-top: 2px solid #16181D; margin-top: 40px; }
+    .sec h2 { font-size: 44px; letter-spacing: -0.03em; margin: 0 0 8px; font-weight: 700; }
+    .pkg { display: grid; grid-template-columns: 240px 1fr; gap: 6px 48px; padding: 26px 0; border-top: 1px solid #E4E4DE; }
+    .pkg h3 { font-family: 'IBM Plex Mono', monospace; font-size: 19px; margin: 0; font-weight: 600; }
+    .pkg .meta { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7280; margin-top: 6px; }
+    .pkg p { margin: 0; font-size: 16px; line-height: 1.6; }
+    .deps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .deps span { font-family: 'IBM Plex Mono', monospace; font-size: 12px; border: 1px solid #DADBD3; padding: 2px 8px; border-radius: 99px; color: #3F434C; }
+
+    .deplist { display: grid; grid-template-columns: 240px 1fr; gap: 6px 48px; padding: 18px 0; border-top: 1px solid #E4E4DE; }
+    .deplist dt { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 4px; }
+    .deplist dd { margin: 0; }
+
+    .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 18px; }
+    .rule-card { border: 1px solid #16181D; border-radius: 6px; padding: 20px 22px; background: #fff; }
+    .rule-card .mono { font-size: 12px; color: #0E8A55; font-weight: 600; }
+    .rule-card h3 { font-size: 22px; margin: 8px 0 8px; letter-spacing: -0.01em; font-weight: 600; }
+    .rule-card p { margin: 0; font-size: 15px; line-height: 1.55; color: #3F434C; }
+
+    @media (max-width: 860px) {
+      .release, .pkg, .deplist { grid-template-columns: 1fr; gap: 10px; }
+      .rules { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 0 16px; }
+      .hero { padding: 48px 0 32px; }
+      .hero h1 { font-size: 48px; }
+      .hero p { font-size: 17px; }
+      .release h2 { font-size: 24px; }
+      .sec h2 { font-size: 34px; }
+      .release ul { font-size: 15.5px; }
+    }
+  </style>
+</head>
+<body>
+
+<div style="width: 100%; min-height: 100%; background: #FBFBF8;">
+<div class="wrap">
+
+  <div class="top">
+    <span class="crumbs">wellavelino / <b>career</b> / CHANGELOG.md</span>
+    <span class="muted">Amsterdam · from São Paulo</span>
+  </div>
+
+  <div class="hero">
+    <h1><span class="hash">#</span> Wellington Avelino</h1>
+    <p>Staff Software Engineer at ServiceNow. I build backend systems, and the test and build infrastructure that lets teams ship them safely.</p>
+    <p class="muted">All notable changes to this engineer are documented below. The format follows Keep a Changelog; the versions follow the calendar.</p>
+    <div class="badges">
+      <span class="badge"><span>build</span><span style="background:#19C37D;color:#05331E;">passing</span></span>
+      <span class="badge"><span>experience</span><span>12 yrs</span></span>
+      <span class="badge"><span>tests maintained</span><span>25k+</span></span>
+      <span class="badge"><span>languages</span><span>pt · en</span></span>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2026.02</div><div class="date">Feb 2026 – now</div><span class="latest">Latest</span></div>
+    <div>
+      <h2>Staff Software Engineer</h2>
+      <div class="where">ServiceNow · Amsterdam</div>
+      <div class="kind add">Added</div>
+      <ul>
+        <li>Platform analytics: Performance Analytics, Charts and Analytics.</li>
+        <li>Dashboards, components and APIs in Java and PostgreSQL.</li>
+        <li>Developer-productivity tools for the org.</li>
+      </ul>
+      <div class="kind fix">Fixed</div>
+      <ul><li>Performance problems across the analytics stack.</li></ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2024.05</div><div class="date">May 2024 – Feb 2026</div><span class="major">Breaking</span></div>
+    <div>
+      <h2>Into feature development</h2>
+      <div class="where">ServiceNow · Senior Software Engineer</div>
+      <div class="kind chg">Changed</div>
+      <ul><li>Lateral move from quality engineering to product work. The testing habits were kept as a dependency.</li></ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2023.02</div><div class="date">Feb 2023 – May 2024</div></div>
+    <div>
+      <h2>Staff Software Engineer, Quality Engineering Lead</h2>
+      <div class="where">ServiceNow</div>
+      <div class="kind add">Added</div>
+      <ul><li>Quality for 3 teams and 5 quality engineers: test strategy, coverage and the gates in CI.</li></ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2021.02</div><div class="date">Feb 2021 – Feb 2023</div><span class="major">Relocated</span></div>
+    <div>
+      <h2>Amsterdam: Backbase, then ServiceNow</h2>
+      <div class="where">Senior SE, Automation · Backbase Feb – Jun 2021 · ServiceNow Jul 2021 – Feb 2023</div>
+      <div class="kind add">Added</div>
+      <ul>
+        <li>XCUITest and Espresso suites for the Backbase mobile business banking app; release team; test-tool proofs of concept.</li>
+        <li>Two UTG awards at ServiceNow in 2022 (Q1 and Q2).</li>
+      </ul>
+      <div class="kind chg">Changed</div>
+      <ul>
+        <li>Maintained <code>25k+</code> automated tests and migrated the legacy test framework.</li>
+        <li>Moved coverage to component tests, which cut E2E runs and the wait for results.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2018.09</div><div class="date">Sep 2018 – Jan 2021</div><span class="major">Relocated</span></div>
+    <div>
+      <h2>Dublin: Zendesk</h2>
+      <div class="where">Software Engineer, Automation → Senior (Jan 2020)</div>
+      <div class="kind add">Added</div>
+      <ul>
+        <li>Espresso and EarlGrey suites for the Zendesk Support mobile app.</li>
+        <li>Ruby tools for CI and developer productivity; Ansible for the CI machines.</li>
+        <li>Test-first coaching for the team; ownership of the regression cycles.</li>
+      </ul>
+      <div class="kind fix">Fixed</div>
+      <ul><li>Held <code>99.6%+</code> crash-free sessions, release after release.</li></ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2015.09</div><div class="date">Sep 2015 – Jul 2018</div></div>
+    <div>
+      <h2>São Paulo: Concrete Solutions <span class="muted" style="font-weight:400;">(now Accenture)</span></h2>
+      <div class="where">Software Engineer, Automation → Senior (May 2016) → Automation Lead (Nov 2016)</div>
+      <div class="kind add">Added</div>
+      <ul>
+        <li>Mobile and API test automation for client projects with Calabash, Ruby and JavaScript.</li>
+        <li>Living documentation with Cucumber and specification by example; visual regression testing.</li>
+        <li>Lead of the automation practice from 2016.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2015.00</div><div class="date">2015 – 2024</div></div>
+    <div>
+      <h2>Co-founded garoaQA</h2>
+      <div class="where">Community</div>
+      <div class="kind add">Added</div>
+      <ul>
+        <li>A Brazilian QA community that grew to <code>1,600+</code> members, with 11 coordinators in 5 states.</li>
+        <li>Testing track coordination at The Developer's Conference; talks on Appium, Calabash and RestAssured with companion repos.</li>
+        <li>Runs and writes for <a href="https://medium.com/assertqualityassurance">Assert Quality Assurance</a>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2014.06</div><div class="date">Jun 2014 – Sep 2015</div></div>
+    <div>
+      <h2>First job: Software Engineer, HR Tech</h2>
+      <div class="where">São Paulo</div>
+      <div class="kind add">Added</div>
+      <ul><li>Web and mobile: an Android app, warehouse software and e-commerce, in Java and JavaScript.</li></ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v2013.00</div><div class="date">2013</div></div>
+    <div>
+      <h2>Initial commit on GitHub</h2>
+      <div class="where">101 repositories since</div>
+      <div class="kind add">Added</div>
+      <ul>
+        <li><a href="https://github.com/wellavelino/ansible_qa_playbook">ansible_qa_playbook</a> provisions a full QA machine.</li>
+        <li><a href="https://github.com/wellavelino/image-comparable">image-comparable</a> and element_screenshot do visual regression in Ruby; snapshot-ios-poc does it on iOS.</li>
+        <li>Forks and contributions to Appium, Calabash, Espresso (kappuccino), RESTMock, fastlane, bluepill and Kontrast.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release">
+    <div class="tagcol"><div class="tag">v0.1.0</div><div class="date">2012 – 2017</div></div>
+    <div>
+      <h2>Systems Analysis (IT), Centro Universitário Senac</h2>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="mono muted" style="font-size: 13px;">## Side projects</div>
+    <h2>Packages I maintain after hours</h2>
+    <p class="muted" style="font-size: 17px; line-height: 1.6; max-width: 700px; margin: 0 0 28px;">Products I design, build, test and run in production on my own, in TypeScript, Go, Python and Swift, and with AI agents.</p>
+
+    <div class="pkg"><div><h3>besparro</h3><div class="meta">private · demo on request</div></div><div><p>Grocery price comparison across 13 Dutch supermarket chains. A nightly ETL fills Postgres, product matching and search run on pgvector, and an AI basket optimizer finds the cheapest mix of stores. A large end-to-end suite and verify gates protect production.</p><div class="deps"><span>Next.js</span><span>NestJS</span><span>PostgreSQL + pgvector</span><span>Redis / BullMQ</span><span>Playwright</span></div></div></div>
+    <div class="pkg"><div><h3>framewise</h3><div class="meta">private · iOS</div></div><div><p>An iOS camera that picks the best crop and aspect ratio live, on device. A MobileNetV3 + RoIAlign model ranks crops with SRCC 0.775, against 0.40 for the baseline, and runs through Core ML.</p><div class="deps"><span>Swift</span><span>Core ML</span><span>PyTorch</span><span>StoreKit 2</span></div></div></div>
+    <div class="pkg"><div><h3>harness</h3><div class="meta">private</div></div><div><p>Multi-role AI orchestration: one model plans, a second implements and escalates, a third executes, all driven headless through the Claude Code CLI with retries and replans.</p><div class="deps"><span>TypeScript</span><span>Node</span><span>LLM agents</span></div></div></div>
+    <div class="pkg"><div><h3><a href="https://github.com/wellavelino/sentinel">sentinel</a></h3><div class="meta">open source</div></div><div><p>A Claude Code plugin that shows a live progress panel for every agent and subagent, and a highlighter that marks the key phrases in each reply using a second model.</p><div class="deps"><span>TypeScript</span><span>Plugin API</span></div></div></div>
+    <div class="pkg"><div><h3><a href="https://github.com/wellavelino/frameo-homeassistant-dashboard">frameo-dashboard</a></h3><div class="meta">open source · ★ 34</div></div><div><p>A fast wall dashboard for a Frameo photo frame or an Android tablet: a kiosk APK and a vanilla JS app on the Home Assistant websocket. Plus an HA integration in Python and energy automations for dynamic tariffs and EV charging.</p><div class="deps"><span>JavaScript</span><span>Android</span><span>Python</span><span>Home Assistant</span></div></div></div>
+    <div class="pkg"><div><h3>prepsio</h3><div class="meta">private · in pilot</div></div><div><p>Reads a nutritionist's meal-plan PDF, scanned ones included, and turns it into a weekly menu, a shopping list and a meal-prep plan.</p><div class="deps"><span>TypeScript</span><span>Prisma</span><span>OCR</span><span>LLM extraction</span></div></div></div>
+    <div class="pkg"><div><h3>se-informe</h3><div class="meta">private · civic tech</div></div><div><p>A Portuguese-language site about Brazilian Congress members and their public spending, from official sources, with links to the receipts and CSV export.</p><div class="deps"><span>Plain Python</span><span>Open data</span></div></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="mono muted" style="font-size: 13px;">## Dependencies</div>
+    <h2>Stack</h2>
+    <dl style="margin: 24px 0 0;">
+      <div class="deplist"><dt>languages</dt><dd class="deps" style="margin-top:0;"><span>Java</span><span>TypeScript &amp; Node</span><span>Go</span><span>Python</span><span>Ruby</span><span>Swift</span><span>Kotlin</span><span>Rust</span><span>Lua</span></dd></div>
+      <div class="deplist"><dt>testing &amp; quality</dt><dd class="deps" style="margin-top:0;"><span>Playwright</span><span>Selenium</span><span>Appium</span><span>Espresso</span><span>XCUITest</span><span>EarlGrey</span><span>Calabash</span><span>Cucumber</span><span>RestAssured</span><span>RSpec</span><span>Jest</span><span>visual regression</span><span>contract tests</span></dd></div>
+      <div class="deplist"><dt>backend &amp; data</dt><dd class="deps" style="margin-top:0;"><span>NestJS</span><span>FastAPI</span><span>Gin</span><span>PostgreSQL</span><span>pgvector</span><span>Redis</span><span>BullMQ</span><span>Prisma</span><span>ETL</span></dd></div>
+      <div class="deplist"><dt>build, ci &amp; infra</dt><dd class="deps" style="margin-top:0;"><span>GitHub Actions</span><span>Jenkins</span><span>Docker</span><span>Ansible</span><span>Nginx</span><span>Cloudflare</span><span>Proxmox</span><span>fastlane</span></dd></div>
+      <div class="deplist"><dt>ai &amp; ml</dt><dd class="deps" style="margin-top:0;"><span>LLM agent orchestration</span><span>Claude API</span><span>evals</span><span>embeddings</span><span>PyTorch</span><span>Core ML</span></dd></div>
+      <div class="deplist"><dt>mobile</dt><dd class="deps" style="margin-top:0;"><span>iOS &amp; SwiftUI</span><span>Android</span><span>kiosk apps</span><span>mobile security</span></dd></div>
+    </dl>
+  </div>
+
+  <div class="sec">
+    <div class="mono muted" style="font-size: 13px;">## CONTRIBUTING.md</div>
+    <h2>House rules</h2>
+    <div class="rules">
+      <div class="rule-card"><div class="mono">rule 01</div><h3>Nothing ships unverified.</h3><p>Static checks, unit, integration and end-to-end tests gate every push. After each deploy I test the change live.</p></div>
+      <div class="rule-card"><div class="mono">rule 02</div><h3>Name the commit that broke it.</h3><p>Every bug fix starts with a failing test and finds the change that introduced the bug.</p></div>
+      <div class="rule-card"><div class="mono">rule 03</div><h3>Beat the baseline, in numbers.</h3><p>A model or heuristic ships only when it beats the simple version on measurements, never on impressions.</p></div>
+      <div class="rule-card"><div class="mono">rule 04</div><h3>Agents get roles, reviews and budgets.</h3><p>Each model has a clear job, with review and cost limits, so AI adds speed without losing quality.</p></div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-bottom: 72px;">
+    <div class="mono muted" style="font-size: 13px;">## Maintainer</div>
+    <h2>Open an issue</h2>
+    <p style="font-size: 18px; line-height: 1.6; margin: 0 0 22px; max-width: 700px;">Backend, platform and quality engineering. Write to me on LinkedIn, or read the code.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 16px;">
+      <a href="https://www.linkedin.com/in/wellington-avelino/">linkedin.com/in/wellington-avelino</a>
+      <a href="https://github.com/wellavelino">github.com/wellavelino</a>
+      <a href="https://medium.com/assertqualityassurance">Assert Quality Assurance</a>
+      <a href="https://twitter.com/wellavelino">@wellavelino</a>
+    </div>
+    <p class="mono muted" style="font-size: 13px; margin: 32px 0 0;">Languages: Portuguese, English · Based in Amsterdam</p>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

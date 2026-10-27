@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wellington Avelino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wellington Avelino, Staff Software Engineer: backend systems, test and build infrastructure.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+    :root { --bg: #FBFBF8; --fg: #16181D; --muted: #6B7280; --rule: #E4E4DE; --hash: #C9CBC2; --link: #0B5FFF; --card: #FFFFFF; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0F1115; --fg: #E8E9EC; --muted: #9AA0AA; --rule: #262A31; --hash: #3A3F48; --link: #6E9BFF; --card: #161920; }
+    }
+    body { margin: 0; background: var(--bg); color: var(--fg); font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+    .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+    .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 22px 0; border-bottom: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+    .top b { color: var(--fg); font-weight: 600; }
+    h1 { font-size: clamp(40px, 9vw, 68px); line-height: .95; letter-spacing: -0.035em; font-weight: 700; margin: 64px 0 16px; overflow-wrap: anywhere; }
+    h1 .hash { color: var(--hash); font-weight: 500; }
+    h1 .cur { color: var(--link); animation: blink 1.1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { h1 .cur { animation: none; } }
+    .lede { font-size: 19px; line-height: 1.55; margin: 0 0 48px; max-width: 640px; }
+    ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+    li a { display: grid; grid-template-columns: 7ch 1fr auto; gap: 16px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; }
+    li a:hover .name, li a:focus-visible .name { color: var(--link); }
+    .v { font-size: 13px; color: var(--muted); }
+    .name { font-size: 20px; font-weight: 600; }
+    .what { display: block; font-size: 15px; color: var(--muted); font-weight: 400; margin-top: 4px; }
+    .go { font-size: 13px; color: var(--link); }
+    footer { margin: 48px 0 64px; font-size: 13px; color: var(--muted); }
+    footer a { color: var(--link); text-decoration: none; }
+    @media (max-width: 520px) { li a { grid-template-columns: 1fr auto; } .v { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top mono"><span>wellavelino / <b>profile</b> / index</span><span>Amsterdam · from São Paulo</span></div>
+    <h1><span class="hash">#</span> Wellington Avelino<span class="cur">_</span></h1>
+    <p class="lede">Staff Software Engineer at ServiceNow. Backend systems, and the test and build infrastructure that lets teams ship them safely. Same profile, five layouts.</p>
+    <ol>
+      <li><a href="changelog.html"><span class="v mono">01</span><span class="name">Changelog<span class="what">Career as release notes, versioned by date.</span></span><span class="go mono">open →</span></a></li>
+      <li><a href="terminal.html"><span class="v mono">02</span><span class="name">Terminal<span class="what">Career as a test run in a shell.</span></span><span class="go mono">open →</span></a></li>
+      <li><a href="swiss.html"><span class="v mono">03</span><span class="name">Swiss<span class="what">Grid, numbers and type.</span></span><span class="go mono">open →</span></a></li>
+      <li><a href="metro.html"><span class="v mono">04</span><span class="name">Metro<span class="what">Career as a transit line, city to city.</span></span><span class="go mono">open →</span></a></li>
+      <li><a href="zine.html"><span class="v mono">05</span><span class="name">Zine<span class="what">A two-ink printed handout.</span></span><span class="go mono">open →</span></a></li>
+    </ol>
+    <footer class="mono"><a href="https://www.linkedin.com/in/wellington-avelino/">LinkedIn</a> · <a href="https://github.com/wellavelino">GitHub</a> · Languages: Portuguese, English</footer>
+  </div>
+</body>
+</html>
