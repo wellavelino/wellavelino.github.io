@@ -1,26 +1,3 @@
-## Wellington Avelino dos Santos
+# wellavelino.github.io
 
-#### QA Engineer, developer, photography enthusiast and traveler 
-
-My focus as QA engineer is automation, speficication by example and DevOps
-
-## My Journey
-
-ServiceNow
-
-BackBase
-
-Zendesk
-
-Concrete Solutions
-
-HR Tech
-
-## Principal achievments 
-
-
-
-## Expertise 
-
-
-## Mentorship 
+Profile of Wellington Avelino: https://wellavelino.github.io
