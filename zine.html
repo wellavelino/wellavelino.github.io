@@ -11,7 +11,6 @@
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Bricolage Grotesque', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 3px; text-underline-offset: 3px; }
     .mono { font-family: 'Space Mono', ui-monospace, monospace; }
-    .ph { font-family: 'Space Mono', monospace; font-size: .85em; background: var(--yel); border: 2px dashed var(--ink); padding: 1px 6px; }
     .page { width: 100%; min-height: 100%; background: var(--paper); overflow: hidden; position: relative;
       background-image: radial-gradient(rgba(31,42,107,.07) 1px, transparent 1.2px); background-size: 6px 6px; }
     .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; box-sizing: border-box; position: relative; }
@@ -89,7 +88,6 @@
     .back h2 span { color: var(--blue); mix-blend-mode: multiply; }
     .back a { color: #fff; text-decoration-color: var(--yel); }
     .links { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 18px; font-weight: 600; }
-    .back .ph { color: var(--ink); }
     .colo { font-family: 'Space Mono', monospace; font-size: 13px; margin: 34px 0 0; }
 
     @media (max-width: 860px) {
@@ -106,7 +104,7 @@
     @media (max-width: 640px) {
       .wrap { padding: 0 16px; }
       .cover { padding: 36px 0 48px; }
-      .cover h1 { font-size: 68px; }
+      .cover h1 { font-size: clamp(48px, 18vw, 68px); }
       .lede { font-size: 19px; }
       .blob.p { width: 220px; height: 220px; right: -60px; top: 10px; }
       .blob.b { width: 140px; height: 140px; right: 40px; top: 150px; }

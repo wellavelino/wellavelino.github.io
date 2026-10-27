@@ -13,7 +13,6 @@
     .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
     .wrap { max-width: 1040px; margin: 0 auto; padding: 0 48px; box-sizing: border-box; }
     .muted { color: #6B7280; }
-    .ph { font-family: 'IBM Plex Mono', monospace; font-size: .85em; color: #8A4B00; background: #FFF1DC; border: 1px dashed #D9A35B; border-radius: 3px; padding: 1px 6px; }
 
     .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 22px 0; border-bottom: 1px solid #E4E4DE; font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
     .crumbs b { font-weight: 600; }
@@ -229,15 +228,15 @@
   <div class="sec">
     <div class="mono muted" style="font-size: 13px;">## Side projects</div>
     <h2>Packages I maintain after hours</h2>
-    <p class="muted" style="font-size: 17px; line-height: 1.6; max-width: 700px; margin: 0 0 28px;">Products I design, build, test and run in production on my own, in TypeScript, Go, Python and Swift, and with AI agents.</p>
+    <p class="muted" style="font-size: 17px; line-height: 1.6; max-width: 700px; margin: 0 0 28px;">Products I design, build, test and run in production on my own, in TypeScript, Python and Swift, and with AI agents.</p>
 
     <div class="pkg"><div><h3>besparro</h3><div class="meta">private · demo on request</div></div><div><p>Grocery price comparison across 13 Dutch supermarket chains. A nightly ETL fills Postgres, product matching and search run on pgvector, and an AI basket optimizer finds the cheapest mix of stores. A large end-to-end suite and verify gates protect production.</p><div class="deps"><span>Next.js</span><span>NestJS</span><span>PostgreSQL + pgvector</span><span>Redis / BullMQ</span><span>Playwright</span></div></div></div>
     <div class="pkg"><div><h3>framewise</h3><div class="meta">private · iOS</div></div><div><p>An iOS camera that picks the best crop and aspect ratio live, on device. A MobileNetV3 + RoIAlign model ranks crops with SRCC 0.775, against 0.40 for the baseline, and runs through Core ML.</p><div class="deps"><span>Swift</span><span>Core ML</span><span>PyTorch</span><span>StoreKit 2</span></div></div></div>
     <div class="pkg"><div><h3>harness</h3><div class="meta">private</div></div><div><p>Multi-role AI orchestration: one model plans, a second implements and escalates, a third executes, all driven headless through the Claude Code CLI with retries and replans.</p><div class="deps"><span>TypeScript</span><span>Node</span><span>LLM agents</span></div></div></div>
     <div class="pkg"><div><h3><a href="https://github.com/wellavelino/sentinel">sentinel</a></h3><div class="meta">open source</div></div><div><p>A Claude Code plugin that shows a live progress panel for every agent and subagent, and a highlighter that marks the key phrases in each reply using a second model.</p><div class="deps"><span>TypeScript</span><span>Plugin API</span></div></div></div>
-    <div class="pkg"><div><h3><a href="https://github.com/wellavelino/frameo-homeassistant-dashboard">frameo-dashboard</a></h3><div class="meta">open source · ★ 34</div></div><div><p>A fast wall dashboard for a Frameo photo frame or an Android tablet: a kiosk APK and a vanilla JS app on the Home Assistant websocket. Plus an HA integration in Python and energy automations for dynamic tariffs and EV charging.</p><div class="deps"><span>JavaScript</span><span>Android</span><span>Python</span><span>Home Assistant</span></div></div></div>
+    <div class="pkg"><div><h3><a href="https://github.com/wellavelino/frameo-homeassistant-dashboard">frameo-dashboard</a></h3><div class="meta">open source · ★ 34</div></div><div><p>A fast wall dashboard for a Frameo photo frame or an Android tablet: a kiosk APK and a vanilla JS app on the Home Assistant websocket, plus energy automations for dynamic tariffs and EV charging.</p><div class="deps"><span>JavaScript</span><span>Android</span><span>Python</span><span>Home Assistant</span></div></div></div>
     <div class="pkg"><div><h3>prepsio</h3><div class="meta">private · in pilot</div></div><div><p>Reads a nutritionist's meal-plan PDF, scanned ones included, and turns it into a weekly menu, a shopping list and a meal-prep plan.</p><div class="deps"><span>TypeScript</span><span>Prisma</span><span>OCR</span><span>LLM extraction</span></div></div></div>
-    <div class="pkg"><div><h3>se-informe</h3><div class="meta">private · civic tech</div></div><div><p>A Portuguese-language site about Brazilian Congress members and their public spending, from official sources, with links to the receipts and CSV export.</p><div class="deps"><span>Plain Python</span><span>Open data</span></div></div></div>
+    <div class="pkg"><div><h3>se-informe</h3><div class="meta">private · civic tech</div></div><div><p>A Portuguese-language site about Brazilian Congress members and their public spending, from official sources, with links to the receipts and CSV export.</p><div class="deps"><span>Python</span><span>open data</span></div></div></div>
   </div>
 
   <div class="sec">
