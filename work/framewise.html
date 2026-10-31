@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>framewise project — Wellington Avelino</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How I am building framewise: an iOS camera that sets ratio, crop and zoom for where the photo is going, with a crop scorer that runs on the device.">
+<meta name="description" content="How I am building framewise: an iOS camera that sets ratio, crop and zoom for where the photo is going, and a crop scorer trained to run on the device.">
 <meta property="og:title" content="framewise project — Wellington Avelino">
-<meta property="og:description" content="How I am building framewise: an iOS camera that sets ratio, crop and zoom for where the photo is going, with a crop scorer that runs on the device.">
+<meta property="og:description" content="How I am building framewise: an iOS camera that sets ratio, crop and zoom for where the photo is going, and a crop scorer trained to run on the device.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
@@ -83,7 +83,7 @@ a:hover .arrow-back{transform:translateX(-3px)}
 <h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I did</h2>
 </div>
 <div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
-<p style="margin: 0">The foundation is built before the app, in small packages that can be tested on their own:</p>
+<p style="margin: 0">The app is built from small packages that can be tested on their own:</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
 <div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Engine</span>
@@ -136,8 +136,9 @@ a:hover .arrow-back{transform:translateX(-3px)}
 <h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I'd do next</h2>
 </div>
 <div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0"><strong>Connect the model.</strong> <span style="color: #5a5d55">The app ranks crops with the hand-written rules today. The trained scorer is exported but not wired in yet.</span></p>
 <p style="margin: 0"><strong>Measure it on a device.</strong> <span style="color: #5a5d55">Latency and battery in a live viewfinder are the numbers that decide if the model ships.</span></p>
-<p style="margin: 0"><strong>Build the app.</strong> <span style="color: #5a5d55">It has not been started yet. The plan is to do that once the framing itself feels right.</span></p>
+
 </div>
 </section>
 
