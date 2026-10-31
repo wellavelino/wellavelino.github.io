@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>frameo-dashboard project — Wellington Avelino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How I built frameo-dashboard: a Home Assistant wall dashboard that appears in 1.9 s on a cheap 1 GHz Android photo frame.">
+<meta property="og:title" content="frameo-dashboard project — Wellington Avelino">
+<meta property="og:description" content="How I built frameo-dashboard: a Home Assistant wall dashboard that appears in 1.9 s on a cheap 1 GHz Android photo frame.">
+<meta property="og:image" content="https://wellavelino.github.io/assets/work/frameo-share.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#f6f5f1}
+a{color:#3f6e00}a:hover{color:#121411}
+a:focus-visible,button:focus-visible{outline:2px solid #121411;outline-offset:2px}
+.arrow{display:inline-block;transition:transform 160ms ease-out}
+a:hover .arrow{transform:translateX(3px)}
+a:hover .arrow-back{transform:translateX(-3px)}
+@media (prefers-reduced-motion: reduce){.arrow{transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
+
+<!-- NAV -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 0">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
+<a href="../index.html" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<a href="../index.html#work" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Work</a>
+<a href="../index.html#experience" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Experience</a>
+<a href="../index.html#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
+</div>
+</nav>
+</div>
+
+<!-- HEADER -->
+<header style="max-width: 1200px; margin: 0 auto; padding: 64px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 24px">
+<a href="../index.html#work" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; font-weight: 600; text-decoration: none"><span class="arrow arrow-back" aria-hidden="true">←</span> All work</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #eef9cc; color: #3f6e00; border-radius: 999px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #3f6e00"></span>Open source</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">34 stars · Home Assistant</span>
+</div>
+<h1 style="margin: 0; max-width: 920px; font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: clamp(36px, 5vw, 56px); line-height: 1; font-weight: 650; letter-spacing: -0.03em; overflow-wrap: anywhere">frameo-dashboard: a fast Home Assistant wall on a cheap photo frame</h1>
+<p style="margin: 0; max-width: 720px; font-size: 19px; line-height: 30px; color: #5a5d55">A Home Assistant dashboard for a cheap Android photo frame, written for what that hardware can actually run. It appears in 1.9 s; Home Assistant's own login page is 80% janky frames on the same device.</p>
+
+<!-- meta row -->
+<dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid #e2e0d8; border-bottom: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Role</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">Solo builder</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Year</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">2026</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Stack</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">JavaScript (ES5) · Android (Java kiosk) · Home Assistant</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Link</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere"><a href="https://github.com/wellavelino/frameo-homeassistant-dashboard" style="text-decoration: none">GitHub ↗</a></dd>
+</div>
+</dl>
+
+<div style="aspect-ratio: 16 / 10; border-radius: 20px; border: 1px solid #e2e0d8; overflow: hidden; margin-top: 16px"><img src="../assets/work/frameo.webp" alt="frameo-dashboard home screen: clock, weather, bin days and upcoming events" width="1280" height="800" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left"></div>
+</header>
+
+<!-- BODY -->
+<main style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 96px">
+
+<section aria-labelledby="s1" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">01</span>
+<h2 id="s1" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The problem</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 30px">A Denver Frameo frame (PFF_1037) is a cheap screen that would make a good wall display, but it has a 1 GHz Cortex-A7, Android 6.0.1 and WebView 107. Standard Home Assistant dashboards are built for far more than that.</p>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">02</span>
+<h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I did</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<p style="margin: 0">I wrote the dashboard around the frame's limits instead of trying to fit a normal web app on it:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Page</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">No framework</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Plain ES5 scripts in one scope, because this WebView has no ES modules. The page is bundled inside a small kiosk APK.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Data</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">One websocket</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">A single connection to Home Assistant using subscribe_entities. The DOM is touched only when a value changes; reconnects back off.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Updates</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Safe OTA</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">A manifest lists every file. The update is swapped in only when all of them downloaded, so a failed update leaves the running copy alone.</p>
+</div>
+</div>
+<p style="margin: 0; color: #5a5d55">Tabs cover Home, Forecast, Calendar, Climate, Lights, Music, Recipes, EV and Settings, and the optional ones hide when their entities are not configured. Unit tests run against recorded Home Assistant responses. The kiosk derives from wesbos/photo-frame-dashboard (MIT).</p>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">03</span>
+<h2 id="s3" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The result</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 0; border-top: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">1.9 s</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">to appear on the frame</span>
+</div>
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">0</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">janky frames, idle for 30 s (1 frame drawn)</span>
+</div>
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">34</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">stars on GitHub</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 19px; line-height: 30px">The measurement that matters is the comparison: Home Assistant's own login page, on the same hardware, is 80% janky frames.</p>
+<p style="margin: 0; color: #5a5d55">Measured on one device, a PFF_1037 frame.</p>
+</div>
+</section>
+
+<section aria-labelledby="s4" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">04</span>
+<h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I'd do next</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0"><strong>Measure more devices.</strong> <span style="color: #5a5d55">The timings come from one frame; other cheap frames and tablets would show how far they carry.</span></p>
+<p style="margin: 0"><strong>Make setup easier.</strong> <span style="color: #5a5d55">A first install still needs ADB. Once it is on the frame, page updates arrive over the air.</span></p>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER CTA -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #e2e0d8; padding-top: 32px">
+<a href="https://github.com/wellavelino/frameo-homeassistant-dashboard" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; box-sizing: border-box; padding: 12px 22px; border-radius: 12px; background: #c8f135; color: #121411; font-size: 15px; font-weight: 600; text-decoration: none">View on GitHub <span aria-hidden="true">↗</span></a>
+<a href="../index.html#work" style="display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; min-height: 44px; text-decoration: none">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">More work</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">All projects <span class="arrow" aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+
+</div>
+</body>
+</html>
