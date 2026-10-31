@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>framewise project — Wellington Avelino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How I am building framewise: an iOS camera that sets ratio, crop and zoom for where the photo is going, with a crop scorer that runs on the device.">
+<meta property="og:title" content="framewise project — Wellington Avelino">
+<meta property="og:description" content="How I am building framewise: an iOS camera that sets ratio, crop and zoom for where the photo is going, with a crop scorer that runs on the device.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#f6f5f1}
+a{color:#3f6e00}a:hover{color:#121411}
+a:focus-visible,button:focus-visible{outline:2px solid #121411;outline-offset:2px}
+.arrow{display:inline-block;transition:transform 160ms ease-out}
+a:hover .arrow{transform:translateX(3px)}
+a:hover .arrow-back{transform:translateX(-3px)}
+@media (prefers-reduced-motion: reduce){.arrow{transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
+
+<!-- NAV -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 0">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
+<a href="../index.html" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<a href="../index.html#work" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Work</a>
+<a href="../index.html#experience" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Experience</a>
+<a href="../index.html#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
+</div>
+</nav>
+</div>
+
+<!-- HEADER -->
+<header style="max-width: 1200px; margin: 0 auto; padding: 64px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 24px">
+<a href="../index.html#work" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; font-weight: 600; text-decoration: none"><span class="arrow arrow-back" aria-hidden="true">←</span> All work</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #fde4da; color: #9a3412; border-radius: 999px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #e2532a"></span>Building</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">iOS · On-device ML · Project notes</span>
+</div>
+<h1 style="margin: 0; max-width: 920px; font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: clamp(36px, 5vw, 56px); line-height: 1; font-weight: 650; letter-spacing: -0.03em; overflow-wrap: anywhere">framewise: a camera that knows where the photo is going</h1>
+<p style="margin: 0; max-width: 720px; font-size: 19px; line-height: 30px; color: #5a5d55">Pick Story, Feed, thumbnail or print, and the viewfinder sets ratio, crop and zoom before you take the shot. Everything stays on the phone.</p>
+
+<!-- meta row -->
+<dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid #e2e0d8; border-bottom: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Role</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">Solo builder</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Year</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">2026 — now</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Stack</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">Swift · SwiftUI · Apple Vision · Core ML · PyTorch</dd>
+</div>
+</dl>
+
+<div style="aspect-ratio: 16 / 7; background: #eceae3; border-radius: 20px; margin-top: 16px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: clamp(24px, 4vw, 44px); font-weight: 500; color: #5a5d55">framewise</div>
+</header>
+
+<!-- BODY -->
+<main style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 96px">
+
+<section aria-labelledby="s1" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">01</span>
+<h2 id="s1" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The problem</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 30px">Photos are usually taken first and cropped later for wherever they end up, and by then the framing may not work. The time to decide is before the shot.</p>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">02</span>
+<h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I did</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<p style="margin: 0">The foundation is built before the app, in small packages that can be tested on their own:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Engine</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Framing engine</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">CompositionEngine is pure Swift, tested on Linux. It holds the framing logic without touching the camera.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Camera</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">CameraKit + Perception</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Runs analysis at 10 Hz while you frame. PhotoWriter keeps the original and stores the crop as a reversible edit.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Model</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Crop scorer</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">A MobileNetV3 + RoIAlign model trained on GAICD and CPC and exported to a Core ML package.</p>
+</div>
+</div>
+<p style="margin: 0; color: #5a5d55">The product rules are strict: on-device only, no account, no backend, and a one-time purchase.</p>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">03</span>
+<h2 id="s3" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The result</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 0; border-top: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">0.775</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">SRCC, learned crop scorer</span>
+</div>
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">0.40</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">SRCC, hand-written rules</span>
+</div>
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">56%</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">Acc5, against 17% for the rules</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 19px; line-height: 30px">On the GAICD test split, 200 photos with about 90 human-rated crops each, the model nearly doubles the rank correlation of hand-written rules.</p>
+<p style="margin: 0; color: #5a5d55">This is an offline benchmark, not latency or quality on a phone. Six training runs landed within noise of each other, so more of the same training would not help.</p>
+</div>
+</section>
+
+<section aria-labelledby="s4" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">04</span>
+<h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I'd do next</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0"><strong>Measure it on a device.</strong> <span style="color: #5a5d55">Latency and battery in a live viewfinder are the numbers that decide if the model ships.</span></p>
+<p style="margin: 0"><strong>Build the app.</strong> <span style="color: #5a5d55">It has not been started yet. The plan is to do that once the framing itself feels right.</span></p>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER CTA -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #e2e0d8; padding-top: 32px">
+<a href="../index.html#contact" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; box-sizing: border-box; padding: 12px 22px; border-radius: 12px; background: #c8f135; color: #121411; font-size: 15px; font-weight: 600; text-decoration: none">Get in touch <span aria-hidden="true">→</span></a>
+<a href="../index.html#work" style="display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; min-height: 44px; text-decoration: none">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">More work</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">All projects <span class="arrow" aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+
+</div>
+</body>
+</html>

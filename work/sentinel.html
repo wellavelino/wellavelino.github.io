@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>sentinel project — Wellington Avelino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How I built sentinel: a Claude Code plugin with a live progress panel for agents and subagents, and an optional highlighter for the phrases you must not miss.">
+<meta property="og:title" content="sentinel project — Wellington Avelino">
+<meta property="og:description" content="How I built sentinel: a Claude Code plugin with a live progress panel for agents and subagents, and an optional highlighter for the phrases you must not miss.">
+<meta property="og:image" content="https://wellavelino.github.io/assets/work/sentinel.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#f6f5f1}
+a{color:#3f6e00}a:hover{color:#121411}
+a:focus-visible,button:focus-visible{outline:2px solid #121411;outline-offset:2px}
+.arrow{display:inline-block;transition:transform 160ms ease-out}
+a:hover .arrow{transform:translateX(3px)}
+a:hover .arrow-back{transform:translateX(-3px)}
+@media (prefers-reduced-motion: reduce){.arrow{transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
+
+<!-- NAV -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 0">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
+<a href="../index.html" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<a href="../index.html#work" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Work</a>
+<a href="../index.html#experience" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Experience</a>
+<a href="../index.html#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
+</div>
+</nav>
+</div>
+
+<!-- HEADER -->
+<header style="max-width: 1200px; margin: 0 auto; padding: 64px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 24px">
+<a href="../index.html#work" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; font-weight: 600; text-decoration: none"><span class="arrow arrow-back" aria-hidden="true">←</span> All work</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #eef9cc; color: #3f6e00; border-radius: 999px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #3f6e00"></span>Open source</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Developer tooling</span>
+</div>
+<h1 style="margin: 0; max-width: 920px; font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: clamp(36px, 5vw, 56px); line-height: 1; font-weight: 650; letter-spacing: -0.03em; overflow-wrap: anywhere">sentinel: seeing what a long agent run is actually doing</h1>
+<p style="margin: 0; max-width: 720px; font-size: 19px; line-height: 30px; color: #5a5d55">A Claude Code plugin that shows live progress for the main thread and every subagent, and can mark the parts of a reply you should not miss.</p>
+
+<!-- meta row -->
+<dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid #e2e0d8; border-bottom: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Role</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">Solo builder</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Year</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">2026</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Stack</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">TypeScript · React (TSX hooks)</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Link</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere"><a href="https://github.com/wellavelino/sentinel" style="text-decoration: none">GitHub ↗</a></dd>
+</div>
+</dl>
+
+<div style="aspect-ratio: 16 / 10; border-radius: 20px; border: 1px solid #e2e0d8; overflow: hidden; margin-top: 16px"><img src="../assets/work/sentinel.webp" alt="sentinel progress panel beside a Claude Code session, listing tasks and their status" width="1280" height="800" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left"></div>
+</header>
+
+<!-- BODY -->
+<main style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 96px">
+
+<section aria-labelledby="s1" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">01</span>
+<h2 id="s1" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The problem</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 30px">A long agent run scrolls past in a terminal. It is hard to tell which task it is on, what each subagent is doing and how much context is left, and in long replies important details get missed.</p>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">02</span>
+<h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I did</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<p style="margin: 0">I built it as a Claude Code plugin with two main parts:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Panel</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Progress panel</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">The goal, every task with its own bar, and a card for the main thread and each subagent: what it is doing, how full its context is and how much of the session is its own.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Highlighter</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">A second reader</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Optional. A small second model reads each reply, marks up to four phrases that matter, and adds a line when something was left out, such as a command that failed.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Privacy</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Nothing leaves</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">The plugin makes no network call of its own and writes no file. Marks and the board live in the session and go with it.</p>
+</div>
+</div>
+<p style="margin: 0; color: #5a5d55"><code style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; background: #eceae3; border-radius: 6px; padding: 2px 6px; overflow-wrap: anywhere">/progress</code> and <code style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; background: #eceae3; border-radius: 6px; padding: 2px 6px; overflow-wrap: anywhere">/highlight</code> are the commands. The highlighter costs one extra model call per turn, so it can be turned off in <code style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px">/config</code>.</p>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">03</span>
+<h2 id="s3" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">Where it stands</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 30px">Published and installable with <code style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; background: #eceae3; border-radius: 6px; padding: 2px 6px; overflow-wrap: anywhere">/plugin install sentinel --marketplace wellavelino/sentinel</code>. MIT licensed.</p>
+<p style="margin: 0; color: #5a5d55">It depends on Claude Code’s function-hook mods, an early-access API that may change between releases; it was written against 2.1.296.</p>
+</div>
+</section>
+
+<section aria-labelledby="s4" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">04</span>
+<h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I'd do next</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0"><strong>Track the mod API.</strong> <span style="color: #5a5d55">While the API is early access, keeping up with releases comes first.</span></p>
+<p style="margin: 0"><strong>Get it in front of users.</strong> <span style="color: #5a5d55">It was built for my own runs; feedback from others would show what is missing.</span></p>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER CTA -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #e2e0d8; padding-top: 32px">
+<a href="https://github.com/wellavelino/sentinel" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; box-sizing: border-box; padding: 12px 22px; border-radius: 12px; background: #c8f135; color: #121411; font-size: 15px; font-weight: 600; text-decoration: none">View on GitHub <span aria-hidden="true">↗</span></a>
+<a href="../index.html#work" style="display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; min-height: 44px; text-decoration: none">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">More work</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">All projects <span class="arrow" aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+
+</div>
+</body>
+</html>

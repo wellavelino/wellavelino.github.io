@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>prepsio project — Wellington Avelino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How I built prepsio: turning nutritionist meal-plan PDFs into reviewed weekly menus, one household shopping list and a meal-prep plan.">
+<meta property="og:title" content="prepsio project — Wellington Avelino">
+<meta property="og:description" content="How I built prepsio: turning nutritionist meal-plan PDFs into reviewed weekly menus, one household shopping list and a meal-prep plan.">
+<meta property="og:image" content="https://wellavelino.github.io/assets/work/prepsio.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#f6f5f1}
+a{color:#3f6e00}a:hover{color:#121411}
+a:focus-visible,button:focus-visible{outline:2px solid #121411;outline-offset:2px}
+.arrow{display:inline-block;transition:transform 160ms ease-out}
+a:hover .arrow{transform:translateX(3px)}
+a:hover .arrow-back{transform:translateX(-3px)}
+@media (prefers-reduced-motion: reduce){.arrow{transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
+
+<!-- NAV -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 0">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
+<a href="../index.html" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<a href="../index.html#work" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Work</a>
+<a href="../index.html#experience" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Experience</a>
+<a href="../index.html#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
+</div>
+</nav>
+</div>
+
+<!-- HEADER -->
+<header style="max-width: 1200px; margin: 0 auto; padding: 64px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 24px">
+<a href="../index.html#work" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; font-weight: 600; text-decoration: none"><span class="arrow arrow-back" aria-hidden="true">←</span> All work</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #fde4da; color: #9a3412; border-radius: 999px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #e2532a"></span>Pre-pilot</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Health tech · Project notes</span>
+</div>
+<h1 style="margin: 0; max-width: 920px; font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: clamp(36px, 5vw, 56px); line-height: 1; font-weight: 650; letter-spacing: -0.03em; overflow-wrap: anywhere">prepsio: from a nutritionist’s PDF to a week you can shop and cook</h1>
+<p style="margin: 0; max-width: 720px; font-size: 19px; line-height: 30px; color: #5a5d55">Turns each person’s meal-plan PDF, scanned ones included, into a weekly menu, one household shopping list and a meal-prep plan, with a person confirming every reading.</p>
+
+<!-- meta row -->
+<dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid #e2e0d8; border-bottom: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Role</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">Solo builder</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Year</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">2026 — now</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Stack</dt>
+<dd style="margin: 0; font-weight: 600; overflow-wrap: anywhere">Next.js 16 · TypeScript · Prisma 7 + PostgreSQL · PyMuPDF + Tesseract · Claude Haiku</dd>
+</div>
+</dl>
+
+<div style="aspect-ratio: 16 / 10; border-radius: 20px; border: 1px solid #e2e0d8; overflow: hidden; margin-top: 16px"><img src="../assets/work/prepsio.webp" alt="prepsio week view: a day of meals from a nutritionist plan, with amounts" width="1280" height="800" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left"></div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Shown with demo data.</p>
+</header>
+
+<!-- BODY -->
+<main style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 96px">
+
+<section aria-labelledby="s1" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">01</span>
+<h2 id="s1" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The problem</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 30px">A nutritionist’s plan arrives as a PDF. To follow it, someone has to turn it into a menu, a shopping list and a cooking plan each week, and it gets harder when a household has more than one plan.</p>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">02</span>
+<h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I did</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<p style="margin: 0">I built one path: PDF, reviewed draft, confirmed plan, weekly menu. Three decisions shape it:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Reading</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Local first</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">PyMuPDF and Tesseract OCR extract the text on the machine, in Portuguese and English. A model only interprets layouts the local parser can’t.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Safety</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">A person confirms</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">The owner reviews and confirms every reading. Missing amounts and uncertain readings block confirmation instead of being guessed.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Planning</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Deterministic code</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Menus, shopping totals and prep plans are computed by ordinary code, so the same confirmed plan gives the same result.</p>
+</div>
+</div>
+<p style="margin: 0; color: #5a5d55">Cost is held down by design: automated tests never call the paid API, and manual tests are capped at $0.50 a day in the app itself.</p>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">03</span>
+<h2 id="s3" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">Where it stands</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 30px">The software is verified offline, with unit and integration tests and a browser run of the whole workflow, including at phone width.</p>
+<p style="margin: 0; color: #5a5d55">Confirming a real plan is still blocked by ambiguities in the source document, which is the check doing its job. Nutritionist validation and a pilot with 3–5 people are ahead.</p>
+</div>
+</section>
+
+<section aria-labelledby="s4" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">04</span>
+<h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I'd do next</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0"><strong>Clear the real-plan blockers.</strong> <span style="color: #5a5d55">Make it possible to resolve each ambiguity in review, without weakening the block.</span></p>
+<p style="margin: 0"><strong>Validate with a nutritionist.</strong> <span style="color: #5a5d55">Their judgement decides whether the reading is good enough to rely on.</span></p>
+<p style="margin: 0"><strong>Run the pilot.</strong> <span style="color: #5a5d55">A small group using it for real weeks is what will show whether it saves time.</span></p>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER CTA -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #e2e0d8; padding-top: 32px">
+<a href="../index.html#contact" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; box-sizing: border-box; padding: 12px 22px; border-radius: 12px; background: #c8f135; color: #121411; font-size: 15px; font-weight: 600; text-decoration: none">Get in touch <span aria-hidden="true">→</span></a>
+<a href="../index.html#work" style="display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; min-height: 44px; text-decoration: none">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">More work</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">All projects <span class="arrow" aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+
+</div>
+</body>
+</html>
