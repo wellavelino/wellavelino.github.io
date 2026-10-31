@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>besparro case study — Wellington Avelino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How I built besparro: nightly prices from 13 Dutch supermarkets, layered product matching and a basket optimiser, built and run solo.">
+<meta property="og:title" content="besparro case study — Wellington Avelino">
+<meta property="og:description" content="How I built besparro: nightly prices from 13 Dutch supermarkets, layered product matching and a basket optimiser, built and run solo.">
+<meta property="og:image" content="https://wellavelino.github.io/assets/work/besparro.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#f6f5f1}
+a{color:#3f6e00}a:hover{color:#121411}
+a:focus-visible,button:focus-visible{outline:2px solid #121411;outline-offset:2px}
+.arrow{display:inline-block;transition:transform 160ms ease-out}
+a:hover .arrow{transform:translateX(3px)}
+a:hover .arrow-back{transform:translateX(-3px)}
+@media (prefers-reduced-motion: reduce){.arrow{transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
+
+<!-- NAV -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 0">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
+<a href="../index.html" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<a href="../index.html#work" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Work</a>
+<a href="../index.html#experience" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Experience</a>
+<a href="../index.html#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
+</div>
+</nav>
+</div>
+
+<!-- HEADER -->
+<header style="max-width: 1200px; margin: 0 auto; padding: 64px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 24px">
+<a href="../index.html" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; font-weight: 600; text-decoration: none"><span class="arrow arrow-back" aria-hidden="true">←</span> All work</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #eef9cc; color: #3f6e00; border-radius: 999px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #3f6e00"></span>Live</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Case study</span>
+</div>
+<h1 style="margin: 0; max-width: 920px; font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: clamp(36px, 5vw, 56px); line-height: 1; font-weight: 650; letter-spacing: -0.03em">besparro: the cheapest basket across 13 Dutch supermarkets</h1>
+<p style="margin: 0; max-width: 720px; font-size: 19px; line-height: 30px; color: #5a5d55">A grocery price comparison I designed, built and run on my own, from the nightly data pipeline to the optimiser that splits your list across stores.</p>
+
+<!-- meta row -->
+<dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid #e2e0d8; border-bottom: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Role</dt>
+<dd style="margin: 0; font-weight: 600">Solo founder and engineer</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Year</dt>
+<dd style="margin: 0; font-weight: 600">2026 — now</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Stack</dt>
+<dd style="margin: 0; font-weight: 600">NestJS · PostgreSQL · pgvector</dd>
+</div>
+<div style="padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Link</dt>
+<dd style="margin: 0; font-weight: 600"><a href="https://besparro.com" style="text-decoration: none">besparro.com ↗</a></dd>
+</div>
+</dl>
+
+<div style="aspect-ratio: 16 / 10; border-radius: 20px; border: 1px solid #e2e0d8; overflow: hidden; margin-top: 16px"><img src="../assets/work/besparro.webp" alt="besparro landing page: search across 13 Dutch supermarkets" width="1440" height="900" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
+</header>
+
+<!-- BODY -->
+<main style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 96px">
+
+<section aria-labelledby="s1" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">01</span>
+<h2 id="s1" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The problem</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 30px">Dutch shoppers choose between more than a dozen supermarket chains, each with its own prices, promotions and product names. Working out where a whole shopping list is cheapest means checking every chain by hand.</p>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">02</span>
+<h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I did</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<p style="margin: 0">I built the product end to end and run it alone. Three parts carry it:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Pipeline</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Nightly ETL</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Refreshes ~150k listings from 13 chains every night into PostgreSQL. Price history is written only when a price or promotion changes.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Matching</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Layered matching</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Barcodes (EAN) match 67.5%; synthetic keys, pgvector embeddings and an LLM handle the rest. Only 2.4% are matched by hand.</p>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Product</span>
+<span style="font-size: 20px; line-height: 28px; font-weight: 600">Basket optimiser</span>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a5d55">Takes a shopping list and finds the cheapest way to fill it across stores.</p>
+</div>
+</div>
+<p style="margin: 0; color: #5a5d55">Matching is the hard part: every chain names and sizes the same product differently. Barcodes settle most of it, so the embedding and LLM tiers only decide the products a barcode can't link.</p>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">03</span>
+<h2 id="s3" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The result</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 0; border-top: 1px solid #e2e0d8">
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">101k</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">products tracked across 13 chains</span>
+</div>
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">16.9k</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">products matched across 2+ chains</span>
+</div>
+<div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">90%</span>
+<span style="font-size: 14px; line-height: 20px; color: #5a5d55">of nightly store crawls healthy, last 30 nights</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 19px; line-height: 30px">Splitting a basket across up to three stores saves 4–9% in simulation. With the app's default of €3 per extra stop, a typical 20-item basket comes out about 4.4% cheaper.</p>
+<p style="margin: 0; color: #5a5d55">Those are upper bounds: the simulation assumes perfect picks and ignores pack sizes and promotions.</p>
+</div>
+</section>
+
+<section aria-labelledby="s4" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">04</span>
+<h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I'd do next</h2>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p style="margin: 0"><strong>Measure match precision.</strong> <span style="color: #5a5d55">I record how every product was matched, but not yet how often a match is wrong.</span></p>
+<p style="margin: 0"><strong>Harden the weakest crawler.</strong> <span style="color: #5a5d55">Albert Heijn causes most failed runs; fewer of them means more nights with every store fresh.</span></p>
+<p style="margin: 0"><strong>Track real savings.</strong> <span style="color: #5a5d55">Logging baskets compared would let me report what users actually save, not a simulation.</span></p>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER CTA -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #e2e0d8; padding-top: 32px">
+<a href="https://besparro.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; box-sizing: border-box; padding: 12px 22px; border-radius: 12px; background: #c8f135; color: #121411; font-size: 15px; font-weight: 600; text-decoration: none">Visit site <span aria-hidden="true">↗</span></a>
+<a href="../index.html" style="display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; min-height: 44px; text-decoration: none">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">More work</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">All projects <span class="arrow" aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+
+</div>
+</body>
+</html>
