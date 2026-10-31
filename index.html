@@ -21,27 +21,28 @@ a:focus-visible,button:focus-visible{outline:2px solid #121411;outline-offset:2p
 a:hover .arrow{transform:translateX(3px)}
 @media (prefers-reduced-motion: reduce){.card,.arrow{transition:none}.card:hover,.card:focus-within{transform:none}}
 </style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
+<div id="top" style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
 
 <!-- NAV -->
 <div style="max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 0">
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
-<a href="#top" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<nav class="nav" aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
+<a class="nav-brand" href="#top" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
+<div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
 <a href="#work" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Work</a>
 <a href="#experience" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Experience</a>
 <a href="#skills" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Skills</a>
-<a href="#contact" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Contact</a>
-<a href="#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
+<a class="nav-dup" href="#contact" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Contact</a>
+<a class="nav-cta" href="#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
 </div>
 </nav>
 </div>
 
 <!-- HERO -->
-<header id="top" style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 32px">
-<div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 999px; padding: 6px 14px 6px 12px">
+<header style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 32px">
+<div class="pill" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 999px; padding: 6px 14px 6px 12px">
 <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #c8f135; box-shadow: 0 0 0 3px #eef9cc"></span>
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Amsterdam · Staff engineer at ServiceNow</span>
 </div>
@@ -53,7 +54,7 @@ a:hover .arrow{transform:translateX(3px)}
 </div>
 
 <!-- track record -->
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0; border-top: 1px solid #e2e0d8; margin-top: 32px">
+<div class="stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0; border-top: 1px solid #e2e0d8; margin-top: 32px">
 <div style="padding: 24px 24px 0 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">12 yrs</span>
 <span style="font-size: 14px; line-height: 20px; color: #5a5d55">building and testing software, from São Paulo to Dublin to Amsterdam</span>
@@ -87,7 +88,7 @@ a:hover .arrow{transform:translateX(3px)}
 
 <!-- FEATURED: besparro -->
 <article class="card" style="grid-column: 1 / -1; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 32px">
-<div style="flex: 1 1 520px; min-width: 0; aspect-ratio: 16 / 10; background: #eceae3; border-radius: 12px; overflow: hidden; border: 1px solid #e2e0d8;"><img src="assets/work/besparro.webp" alt="besparro landing page: search across 13 Dutch supermarkets" width="1440" height="900" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left"></div>
+<div class="col" style="flex: 1 1 520px; min-width: 0; aspect-ratio: 16 / 10; background: #eceae3; border-radius: 12px; overflow: hidden; border: 1px solid #e2e0d8;"><img src="assets/work/besparro.webp" alt="besparro search results for olijfolie: 240 products with live prices compared across Dutch supermarkets" width="1440" height="900" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left"></div>
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px; justify-content: center">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span style="display: inline-flex; align-items: center; gap: 6px; background: #eef9cc; color: #3f6e00; border-radius: 999px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #3f6e00"></span>Live</span>
@@ -204,7 +205,7 @@ a:hover .arrow{transform:translateX(3px)}
 
 <!-- framewise -->
 <article class="card" style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
-<div style="aspect-ratio: 16 / 10; background: #eceae3; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: clamp(20px, 2.4vw, 30px); font-weight: 500; color: #5a5d55">framewise</div>
+<div style="aspect-ratio: 16 / 10; background: #eceae3; border-radius: 12px; overflow: hidden; border: 1px solid #e2e0d8;"><img src="assets/work/framewise.webp" alt="Concept render of the framewise camera screen in three destinations, Feed, Story and Thumbnail, built from the app's design tokens" width="1440" height="900" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span style="display: inline-flex; align-items: center; gap: 6px; background: #fde4da; color: #9a3412; border-radius: 999px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #e2532a"></span>Building</span>
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">iOS · On-device ML</span>
@@ -222,6 +223,7 @@ a:hover .arrow{transform:translateX(3px)}
 </article>
 
 </div>
+<a class="next" href="#experience">Next: Experience <span aria-hidden="true">↓</span></a>
 </section>
 
 <!-- EXPERIENCE -->
@@ -235,25 +237,25 @@ a:hover .arrow{transform:translateX(3px)}
 
 <!-- ServiceNow -->
 <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 32px 0; border-bottom: 1px solid #e2e0d8">
-<div style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">ServiceNow</span>
 <span style="font-size: 14px; line-height: 20px; font-weight: 500; color: #5a5d55">Amsterdam · 2021 — now</span>
 </div>
-<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Staff Software Engineer</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Feb 2026 — now</span></div>
+<div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Staff Software Engineer</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Feb 2026 — now</span></div>
 <p style="margin: 0; color: #5a5d55">Performance Analytics and Charts &amp; Analytics: dashboards, components and APIs in Java and PostgreSQL, developer-productivity tools and performance fixes.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior Software Engineer</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">May 2024 — Feb 2026</span></div>
+<div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior Software Engineer</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">May 2024 — Feb 2026</span></div>
 <p style="margin: 0; color: #5a5d55">Moved from quality engineering into feature development.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Staff SE, Quality Engineering Lead</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Feb 2023 — May 2024</span></div>
+<div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Staff SE, Quality Engineering Lead</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Feb 2023 — May 2024</span></div>
 <p style="margin: 0; color: #5a5d55">Led quality for 3 teams and 5 quality engineers: test strategy, coverage targets and CI gates.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior SE, Automation</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Jul 2021 — Feb 2023</span></div>
+<div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior SE, Automation</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Jul 2021 — Feb 2023</span></div>
 <p style="margin: 0; color: #5a5d55">Migrated the legacy test framework and shifted coverage to component tests to cut E2E run times. Two UTG awards in 2022.</p>
 </div>
 </div>
@@ -261,11 +263,11 @@ a:hover .arrow{transform:translateX(3px)}
 
 <!-- Backbase -->
 <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 32px 0; border-bottom: 1px solid #e2e0d8">
-<div style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">Backbase</span>
 <span style="font-size: 14px; line-height: 20px; font-weight: 500; color: #5a5d55">Amsterdam · 2021</span>
 </div>
-<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior SE, Automation</span>
 <p style="margin: 0; color: #5a5d55">Built XCUITest and Espresso suites for a mobile banking app and ran proofs of concept for new test tooling.</p>
 </div>
@@ -273,11 +275,11 @@ a:hover .arrow{transform:translateX(3px)}
 
 <!-- Zendesk -->
 <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 32px 0; border-bottom: 1px solid #e2e0d8">
-<div style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">Zendesk</span>
 <span style="font-size: 14px; line-height: 20px; font-weight: 500; color: #5a5d55">Dublin · 2018 — 2021</span>
 </div>
-<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">SE, Automation → Senior (2020)</span>
 <p style="margin: 0; color: #5a5d55">Built Espresso and EarlGrey suites for the Support mobile app, wrote Ruby CI tools, ran Ansible for CI machines, owned regression cycles and coached teams on test-first practice.</p>
 </div>
@@ -285,11 +287,11 @@ a:hover .arrow{transform:translateX(3px)}
 
 <!-- Concrete -->
 <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 32px 0; border-bottom: 1px solid #e2e0d8">
-<div style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">Concrete Solutions</span>
 <span style="font-size: 14px; line-height: 20px; font-weight: 500; color: #5a5d55">São Paulo · 2015 — 2018 · now Accenture</span>
 </div>
-<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">SE → Senior → Automation Lead (2016)</span>
 <p style="margin: 0; color: #5a5d55">Mobile and API test automation with Calabash, Ruby and JavaScript, plus living documentation and visual regression testing.</p>
 </div>
@@ -297,11 +299,11 @@ a:hover .arrow{transform:translateX(3px)}
 
 <!-- HR Tech -->
 <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 32px 0; border-bottom: 1px solid #e2e0d8">
-<div style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">HR Tech</span>
 <span style="font-size: 14px; line-height: 20px; font-weight: 500; color: #5a5d55">São Paulo · 2014 — 2015</span>
 </div>
-<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">Software Engineer</span>
 <p style="margin: 0; color: #5a5d55">An Android app, warehouse software and e-commerce, in Java and JavaScript.</p>
 </div>
@@ -310,14 +312,15 @@ a:hover .arrow{transform:translateX(3px)}
 </div>
 
 <!-- Community -->
-<div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 32px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center">
-<div style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 8px">
+<div class="pad" style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 32px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center">
+<div class="col" style="flex: 0 0 220px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">Community · 2015 — 2024</span>
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">garoaQA</span>
 </div>
-<p style="flex: 1 1 480px; min-width: 0; margin: 0; color: #5a5d55">Co-founded a Brazilian QA community and grew it to 1,600+ members with 11 coordinators across 5 states. Coordinated the testing track at The Developer's Conference and gave talks on Appium, Calabash and RestAssured.</p>
+<p class="col" style="flex: 1 1 480px; min-width: 0; margin: 0; color: #5a5d55">Co-founded a Brazilian QA community and grew it to 1,600+ members with 11 coordinators across 5 states. Coordinated the testing track at The Developer's Conference and gave talks on Appium, Calabash and RestAssured.</p>
 <a href="https://medium.com/assertqualityassurance" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; text-decoration: none">Read my writing <span aria-hidden="true">↗</span></a>
 </div>
+<a class="next" href="#skills">Next: Skills <span aria-hidden="true">↓</span></a>
 </section>
 
 <!-- SKILLS -->
@@ -370,6 +373,7 @@ a:hover .arrow{transform:translateX(3px)}
 </div>
 </div>
 </div>
+<a class="next" href="#contact">Next: Contact <span aria-hidden="true">↓</span></a>
 </section>
 
 <!-- CONTACT -->
@@ -392,6 +396,7 @@ a:hover .arrow{transform:translateX(3px)}
 </footer>
 </section>
 
+<a class="to-top" href="#top"><span aria-hidden="true">↑</span> Top</a>
 </div>
 </body>
 </html>
