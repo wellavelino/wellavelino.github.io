@@ -19,7 +19,7 @@ body{padding-bottom:64px} /* room for the top link at the end of the page */
 
 /* Below this width the fixed label column no longer fits beside the text. */
 @media (max-width:960px){
-  .col{flex:1 1 100%!important;max-width:none!important}
+  .col{flex:1 1 100%!important}
   .stats{grid-template-columns:1fr 1fr!important}
   .stats>div:nth-child(odd):last-child{grid-column:1/-1}
 }
