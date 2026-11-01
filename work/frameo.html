@@ -20,18 +20,19 @@ a:hover .arrow{transform:translateX(3px)}
 a:hover .arrow-back{transform:translateX(-3px)}
 @media (prefers-reduced-motion: reduce){.arrow{transition:none}}
 </style>
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
-<div style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
+<div id="top" style="background: #f6f5f1; color: #121411; font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh">
 
 <!-- NAV -->
 <div style="max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 0">
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
-<a href="../index.html" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<nav class="nav" aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 12px 12px 12px 24px">
+<a class="nav-brand" href="../index.html" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: #121411; text-decoration: none">Wellington Avelino</a>
+<div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
 <a href="../index.html#work" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Work</a>
 <a href="../index.html#experience" style="font-size: 14px; line-height: 20px; font-weight: 500; color: #121411; text-decoration: none; padding: 12px 14px; border-radius: 12px">Experience</a>
-<a href="../index.html#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
+<a class="nav-cta" href="../index.html#contact" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #121411; background: #c8f135; text-decoration: none; padding: 12px 18px; border-radius: 12px; margin-left: 8px">Get in touch</a>
 </div>
 </nav>
 </div>
@@ -73,21 +74,22 @@ a:hover .arrow-back{transform:translateX(-3px)}
 <main style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 96px">
 
 <section aria-labelledby="s1" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
-<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<div class="col" style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">01</span>
 <h2 id="s1" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The problem</h2>
 </div>
-<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<div class="col" style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
 <p style="margin: 0; font-size: 19px; line-height: 30px">A Denver Frameo frame (PFF_1037) is a cheap screen that would make a good wall display, but it has a 1 GHz Cortex-A7, Android 6.0.1 and WebView 107. Standard Home Assistant dashboards are built for far more than that.</p>
+<a class="next" href="#s2">Next: What I did <span aria-hidden="true">↓</span></a>
 </div>
 </section>
 
 <section aria-labelledby="s2" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
-<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<div class="col" style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">02</span>
 <h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I did</h2>
 </div>
-<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<div class="col" style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
 <p style="margin: 0">I wrote the dashboard around the frame's limits instead of trying to fit a normal web app on it:</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
 <div style="background: #ffffff; border: 1px solid #e2e0d8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
@@ -107,16 +109,17 @@ a:hover .arrow-back{transform:translateX(-3px)}
 </div>
 </div>
 <p style="margin: 0; color: #5a5d55">Tabs cover Home, Forecast, Calendar, Climate, Lights, Music, Recipes, EV and Settings, and the optional ones hide when their entities are not configured. Unit tests run against recorded Home Assistant responses. The kiosk derives from wesbos/photo-frame-dashboard (MIT).</p>
+<a class="next" href="#s3">Next: The result <span aria-hidden="true">↓</span></a>
 </div>
 </section>
 
 <section aria-labelledby="s3" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
-<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<div class="col" style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">03</span>
 <h2 id="s3" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">The result</h2>
 </div>
-<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 0; border-top: 1px solid #e2e0d8">
+<div class="col" style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; max-width: 720px">
+<div class="stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 0; border-top: 1px solid #e2e0d8">
 <div style="padding: 20px 20px 0 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; line-height: 1; font-weight: 650; letter-spacing: -0.03em">1.9 s</span>
 <span style="font-size: 14px; line-height: 20px; color: #5a5d55">to appear on the frame</span>
@@ -132,15 +135,16 @@ a:hover .arrow-back{transform:translateX(-3px)}
 </div>
 <p style="margin: 0; font-size: 19px; line-height: 30px">The measurement that matters is the comparison: Home Assistant's own login page, on the same hardware, is 80% janky frames.</p>
 <p style="margin: 0; color: #5a5d55">Measured on one device, a PFF_1037 frame.</p>
+<a class="next" href="#s4">Next: What I'd do next <span aria-hidden="true">↓</span></a>
 </div>
 </section>
 
 <section aria-labelledby="s4" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
-<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<div class="col" style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5d55">04</span>
 <h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">What I'd do next</h2>
 </div>
-<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<div class="col" style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px">
 <p style="margin: 0"><strong>Measure more devices.</strong> <span style="color: #5a5d55">The timings come from one frame; other cheap frames and tablets would show how far they carry.</span></p>
 <p style="margin: 0"><strong>Make setup easier.</strong> <span style="color: #5a5d55">A first install still needs ADB. Once it is on the frame, page updates arrive over the air.</span></p>
 </div>
@@ -149,7 +153,7 @@ a:hover .arrow-back{transform:translateX(-3px)}
 </main>
 
 <!-- FOOTER CTA -->
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 48px">
+<div class="foot" style="max-width: 1200px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 48px) 48px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #e2e0d8; padding-top: 32px">
 <a href="https://github.com/wellavelino/frameo-homeassistant-dashboard" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; box-sizing: border-box; padding: 12px 22px; border-radius: 12px; background: #c8f135; color: #121411; font-size: 15px; font-weight: 600; text-decoration: none">View on GitHub <span aria-hidden="true">↗</span></a>
 <a href="../index.html#work" style="display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; min-height: 44px; text-decoration: none">
@@ -159,6 +163,7 @@ a:hover .arrow-back{transform:translateX(-3px)}
 </div>
 </div>
 
+<a class="to-top" href="#top"><span aria-hidden="true">↑</span> Top</a>
 </div>
 </body>
 </html>

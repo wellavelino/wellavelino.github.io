@@ -1,0 +1,65 @@
+/* Shared layer for every page: jump links and the layout for narrow screens.
+   Page layout lives in inline styles, so the overrides below need !important. */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+h2[id]{scroll-margin-top:48px}
+body{padding-bottom:64px} /* room for the top link at the end of the page */
+
+.next{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:44px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#5a5d55;text-decoration:none}
+.next:hover{color:#121411}
+.to-top{position:fixed;right:16px;bottom:16px;z-index:10;display:inline-flex;align-items:center;gap:6px;min-height:44px;box-sizing:border-box;padding:0 16px;background:#fff;border:1px solid #e2e0d8;border-radius:12px;box-shadow:0 1px 2px rgba(18,20,17,.06),0 8px 24px rgba(18,20,17,.10);color:#121411;font-size:14px;font-weight:600;text-decoration:none}
+
+/* Hide the top link until the page has scrolled, where the browser supports it. */
+@supports (animation-timeline:scroll()){
+  .to-top{animation:to-top-in linear both;animation-timeline:scroll();animation-range:0 320px}
+  @keyframes to-top-in{from{opacity:0;visibility:hidden}to{opacity:1;visibility:visible}}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (hover:none){.card:hover,.card:focus-within{transform:none;box-shadow:none}}
+
+/* Below this width the fixed label column no longer fits beside the text. */
+@media (max-width:960px){
+  .col{flex:1 1 100%!important}
+  .stats{grid-template-columns:1fr 1fr!important}
+  .stats>div:nth-child(odd):last-child{grid-column:1/-1}
+}
+
+@media (max-width:640px){
+  /* Nav: name and button on the first row, links on the second. */
+  .nav{gap:4px 8px!important;padding:8px 8px 8px 16px!important}
+  .nav::before{content:"";order:3;flex-basis:100%;height:0}
+  .nav-brand{order:1;flex:1 1 auto;font-size:18px!important}
+  .nav-links{display:contents!important}
+  .nav-cta{order:2;margin-left:0!important;padding:10px 14px!important}
+  .nav-links a:not(.nav-cta){order:4;flex:1 1 0;text-align:center;padding:12px 4px!important}
+  .nav-dup{display:none}
+
+  header,main,section[id]{padding-top:48px!important}
+  header,section[id]{gap:24px!important}
+  main{gap:48px!important}
+  .foot{padding-top:48px!important}
+
+  h1{font-size:clamp(32px,9.5vw,40px)!important;line-height:1.02!important;text-wrap:balance}
+  section[id] h2{font-size:34px!important;line-height:1.05!important;text-wrap:balance}
+  header p{font-size:17px!important;line-height:27px!important}
+  .pill{border-radius:12px!important;align-items:baseline!important}
+
+  dl{grid-template-columns:1fr 1fr!important}
+  .stats>div{padding-right:16px!important}
+  .stats>div>span:first-child{font-size:36px!important}
+  dl>div{padding:14px 12px 14px 0!important}
+  dl>div:nth-child(odd):last-child{grid-column:1/-1}
+
+  .card{padding:16px!important;gap:16px!important}
+  .card h3{font-size:28px!important}
+  .pad{padding:24px!important}
+
+  .role{display:block!important}
+  .role span{display:block;line-height:22px!important}
+}
+
+/* Keeps the name and the button on one row on the smallest phones. */
+@media (max-width:360px){
+  .nav-brand{font-size:16px!important}
+  .nav-cta{padding:10px!important}
+}
