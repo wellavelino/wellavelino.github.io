@@ -20,6 +20,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #121411;outline-offset:2p
 .arrow{display:inline-block;transition:transform 160ms ease-out}
 a:hover .arrow{transform:translateX(3px)}
 @media (prefers-reduced-motion: reduce){.card,.arrow{transition:none}.card:hover,.card:focus-within{transform:none}}
+.pts{margin:4px 0 0;padding-left:20px;max-width:72ch;color:#5a5d55;display:flex;flex-direction:column;gap:6px}
+.pts li{padding-left:4px}
+.pts li::marker{color:#a3a69c}
 </style>
 <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -244,19 +247,35 @@ a:hover .arrow{transform:translateX(3px)}
 <div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Staff Software Engineer</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Feb 2026 — now</span></div>
-<p style="margin: 0; color: #5a5d55">Performance Analytics and Charts &amp; Analytics in Java and PostgreSQL. Made dashboard loading and ACL checks 4x faster by profiling under load, cut localization defects by about 90% (from ~40 a quarter to ~5) with the localization and core apps teams, and built an agent-based simulator that reproduces hard-to-find defects from logs and past tickets. Security Champion.</p>
+<ul class="pts">
+<li>Performance Analytics and Charts &amp; Analytics in Java and PostgreSQL.</li>
+<li>Made dashboard loading and ACL checks 4x faster by profiling under load.</li>
+<li>Cut localization defects by about 90% (from ~40 a quarter to ~5) with the localization and core apps teams.</li>
+<li>Built an agent-based simulator that reproduces hard-to-find defects from logs and past tickets.</li>
+<li>Security Champion.</li>
+</ul>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior Software Engineer</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">May 2024 — Feb 2026</span></div>
-<p style="margin: 0; color: #5a5d55">Moved from quality engineering into feature development, working across backend, frontend and quality. Security Champion.</p>
+<ul class="pts">
+<li>Moved from quality engineering into feature development, working across backend, frontend and quality.</li>
+<li>Security Champion.</li>
+</ul>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Staff SE, Quality Engineering Lead</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Feb 2023 — May 2024</span></div>
-<p style="margin: 0; color: #5a5d55">Led quality for 3 teams and 5 quality engineers: test strategy, coverage targets and CI gates. Moved about 3,000 tests from Selenium to Playwright, which started the company-wide move that made Playwright the default for integration and end-to-end testing.</p>
+<ul class="pts">
+<li>Led quality for 3 teams and 5 quality engineers: test strategy, coverage targets and CI gates.</li>
+<li>Moved about 3,000 tests from Selenium to Playwright, which started the company-wide move that made Playwright the default for integration and end-to-end testing.</li>
+</ul>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <div class="role" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior SE, Automation</span><span style="font-size: 14px; line-height: 28px; font-weight: 500; color: #5a5d55">Jul 2021 — Feb 2023</span></div>
-<p style="margin: 0; color: #5a5d55">Maintained 25,000+ automated tests, migrated the legacy test framework and shifted coverage to component tests to cut E2E run times. Two UTG awards in 2022.</p>
+<ul class="pts">
+<li>Maintained 25,000+ automated tests.</li>
+<li>Migrated the legacy test framework and shifted coverage to component tests to cut E2E run times.</li>
+<li>Two UTG awards in 2022.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -269,7 +288,10 @@ a:hover .arrow{transform:translateX(3px)}
 </div>
 <div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">Senior SE, Automation</span>
-<p style="margin: 0; color: #5a5d55">Built XCUITest and Espresso suites for a mobile banking app and ran proofs of concept for new test tooling.</p>
+<ul class="pts">
+<li>Built XCUITest and Espresso suites for a mobile banking app.</li>
+<li>Ran proofs of concept for new test tooling.</li>
+</ul>
 </div>
 </div>
 
@@ -281,7 +303,12 @@ a:hover .arrow{transform:translateX(3px)}
 </div>
 <div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">SE, Automation → Senior (2020)</span>
-<p style="margin: 0; color: #5a5d55">Took the Support mobile app from zero automation to a reliable Espresso and EarlGrey suite, cutting the release cycle from three weeks to one day while the store rating rose from 3.1 to above 4.4. Wrote Ruby CI tools, ran a 15 Mac mini CI cluster with Ansible and coached teams on test-first practice.</p>
+<ul class="pts">
+<li>Took the Support mobile app from zero automation to a reliable Espresso and EarlGrey suite, cutting the release cycle from three weeks to one day.</li>
+<li>The store rating rose from 3.1 to above 4.4 over the same period.</li>
+<li>Wrote Ruby CI tools and ran a 15 Mac mini CI cluster with Ansible.</li>
+<li>Coached teams on test-first practice.</li>
+</ul>
 </div>
 </div>
 
@@ -293,7 +320,11 @@ a:hover .arrow{transform:translateX(3px)}
 </div>
 <div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">SE → Senior → Automation Lead (2016)</span>
-<p style="margin: 0; color: #5a5d55">Mobile and API test automation with Calabash, Ruby and JavaScript, plus living documentation and visual regression testing. As chapter lead, managed 4 direct reports, ran hiring and shaped the initial vision for new client projects.</p>
+<ul class="pts">
+<li>Mobile and API test automation with Calabash, Ruby and JavaScript.</li>
+<li>Living documentation and visual regression testing.</li>
+<li>As chapter lead, managed 4 direct reports, ran hiring and shaped the initial vision for new client projects.</li>
+</ul>
 </div>
 </div>
 
@@ -305,7 +336,11 @@ a:hover .arrow{transform:translateX(3px)}
 </div>
 <div class="col" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 20px; line-height: 28px; font-weight: 600">Software Engineer</span>
-<p style="margin: 0; color: #5a5d55">Joined as a Java intern and was promoted after eight months. Built a white-label Android app for a large Brazilian retailer and maintained warehouse, e-commerce and internal ticketing software in Java, JSF, Spring MVC and stored procedures.</p>
+<ul class="pts">
+<li>Joined as a Java intern and was promoted after eight months.</li>
+<li>Built a white-label Android app for a large Brazilian retailer.</li>
+<li>Maintained warehouse, e-commerce and internal ticketing software in Java, JSF, Spring MVC and stored procedures.</li>
+</ul>
 </div>
 </div>
 
